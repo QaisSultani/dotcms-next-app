@@ -1,22 +1,16 @@
 import Activities from "@/components/Activities";
 import Blogs from "@/components/Blogs";
 import Events from "@/components/Events";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header"
-import Hero from "@/components/Hero";
+import HeroBanner from "@/components/HeroBanner";
 
 const Home = () => {
   return (
-    <div>
-      <Header />
-      <main>
-        <Hero />
-        <Activities />
-        <Events />
-        <Blogs />
-      </main>
-      <Footer />
-    </div>
+    <main>
+      <HeroBanner />
+      <Activities />
+      <Events />
+      <Blogs />
+    </main>
   );
 };
 export default Home;

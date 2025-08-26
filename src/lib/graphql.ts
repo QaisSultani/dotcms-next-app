@@ -1,5 +1,5 @@
 const GRAPHQL_ENDPOINT = "https://demo.dotcms.com/api/v1/graphql";
-export const IMAGES_BASE_URL = "https://demo.dotcms.com";
+export const BASE_URL = "https://demo.dotcms.com";
 
 export async function fetchGraphQL<T>(
   query: string,

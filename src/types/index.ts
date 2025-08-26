@@ -23,7 +23,7 @@ export type ActivitiesData = {
   }[];
 };
 
-export type EventData = {
+export type EventsData = {
   calendarEventCollection: {
     title: string;
     description: string;
@@ -33,7 +33,7 @@ export type EventData = {
   }[];
 };
 
-export type BlogData = {
+export type BlogsData = {
   BlogCollection: {
     title: string;
     urlMap: string;
