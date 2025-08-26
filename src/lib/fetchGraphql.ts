@@ -1,4 +1,4 @@
-const GRAPHQL_ENDPOINT = "https://demo.dotcms.com/api/v1/graphql";
+import { GRAPHQL_ENDPOINT } from "@/constants/endpoints";
 
 export async function fetchGraphQL<T>(
   query: string,

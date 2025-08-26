@@ -1,6 +1,6 @@
-import { fetchGraphQL } from "@/lib/graphql";
-import { withLogger } from "@/lib/logger";
-import { EVENTS_QUERY } from "@/lib/queries";
+import { fetchGraphQL } from "@/lib/fetchGraphql";
+import { withLogger } from "@/lib/withLogger";
+import { EVENTS_QUERY } from "@/constants/queries";
 import { generateUrl } from "@/lib/utils";
 import { EventsData } from "@/types";
 import Image from "next/image";

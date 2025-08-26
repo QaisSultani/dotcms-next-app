@@ -1,6 +1,6 @@
-import { fetchGraphQL } from "@/lib/graphql";
-import { withLogger } from "@/lib/logger";
-import { HERO_BANNER_QUERY } from "@/lib/queries";
+import { fetchGraphQL } from "@/lib/fetchGraphql";
+import { withLogger } from "@/lib/withLogger";
+import { HERO_BANNER_QUERY } from "@/constants/queries";
 import { generateUrl } from "@/lib/utils";
 import { HeroData } from "@/types";
 import Image from "next/image";

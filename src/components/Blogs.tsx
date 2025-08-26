@@ -1,10 +1,11 @@
-import { fetchGraphQL } from "@/lib/graphql";
-import { withLogger } from "@/lib/logger";
-import { BLOGS_QUERY } from "@/lib/queries";
+import { fetchGraphQL } from "@/lib/fetchGraphql";
+import { withLogger } from "@/lib/withLogger";
+import { BLOGS_QUERY } from "@/constants/queries";
 import { generateUrl } from "@/lib/utils";
 import { BlogsData } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
+import { Button } from "./ui/button";
 
 const Blogs = async () => {
   const data = await withLogger("fetchBlogs", () =>
@@ -28,7 +29,7 @@ const Blogs = async () => {
                 )}
                 <p>{blog.title}</p>
                 <p>
-                  {blog.teaser}...<span>Read More +</span>
+                  {blog.teaser}...<Button>Read More +</Button>
                 </p>
               </Link>
             </article>
