@@ -26,13 +26,13 @@ export async function withLogger<T>(
     logger(`processing ${eventName}...`);
 
     const data = await callback();
-    
+
     if (data === null || data === undefined) {
       throw new Error(eventName);
     }
-    
+
     logger(`processed ${eventName}`, data);
-    
+
     return data;
   } catch (error: unknown) {
     if (error instanceof Error) {

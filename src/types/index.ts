@@ -15,10 +15,10 @@ export type ActivitiesData = {
     category: {
       name: string;
       inode: string;
-    };
+    }[];
     retailPrice: number;
     image: {
-      fileAsset: { versionPath: string };
+      versionPath: string;
     };
   }[];
 };
