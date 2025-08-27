@@ -17,6 +17,10 @@ export const metadata: Metadata = {
   title: "VentureSphere | Real-World NextJS App with dotCMS",
   description:
     "Discover amazing products, events, and experiences. Join our community for unforgettable adventures and lasting memories.",
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-icon.png",
+  },
   keywords: [
     "Next.js",
     "dotCMS",
@@ -26,9 +30,9 @@ export const metadata: Metadata = {
     "blog",
     "headless CMS",
   ],
-  authors: [{ name: "dotCMS Demo Team" }],
-  creator: "dotCMS",
-  publisher: "dotCMS",
+  authors: [{ name: "VentureSphere Team" }],
+  creator: "VentureSphere",
+  publisher: "VentureSphere",
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL || "https://dotcms-next-app.vercel.app/"
   ),
@@ -39,13 +43,13 @@ export const metadata: Metadata = {
     title: "VentureSphere | Real-World NextJS App with dotCMS",
     description:
       "Discover amazing products, events, and experiences. Join our community for unforgettable adventures and lasting memories.",
-    siteName: "dotCMS Next.js Demo",
+    siteName: "VentureSphere",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "dotCMS Next.js Demo Application",
+        alt: "VentureSphere Application",
       },
     ],
   },
@@ -54,7 +58,7 @@ export const metadata: Metadata = {
     title: "VentureSphere | Real-World NextJS App with dotCMS",
     description:
       "Discover amazing products, events, and experiences. Join our community for unforgettable adventures and lasting memories.",
-    images: ["/og-image.jpg"],
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,

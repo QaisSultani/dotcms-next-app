@@ -25,13 +25,13 @@ const Home = () => {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Organization",
-        "@id": "https://dotcms.com/#organization",
-        name: "dotCMS",
-        url: "https://dotcms.com/",
+        "@type": "Marketing",
+        "@id": "https://dotcms-next-app.vercel.app",
+        name: "VentureSphere",
+        url: "https://dotcms-next-app.vercel.app",
         logo: {
           "@type": "ImageObject",
-          url: "https://dotcms.com/logo.png",
+          url: "https://dotcms-next-app.vercel.app/icon.png",
           width: 200,
           height: 60,
         },
@@ -44,7 +44,7 @@ const Home = () => {
         description:
           "Discover amazing products, events, and experiences. Join our community for unforgettable adventures and lasting memories.",
         publisher: {
-          "@id": "https://dotcms.com/#organization",
+          "@id": "https://dotcms-next-app.vercel.app",
         },
         inLanguage: "en-US",
       },
