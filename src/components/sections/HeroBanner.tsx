@@ -51,9 +51,9 @@ const HeroBanner = async () => {
                 {/* Content */}
                 <figcaption className="absolute inset-0 flex items-center justify-center">
                   <div className="container px-4 text-center text-white">
-                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 drop-shadow-lg">
+                    <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 drop-shadow-lg">
                       {hero.title}
-                    </h1>
+                    </h2>
                     {hero.caption && (
                       <p className="text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto leading-relaxed drop-shadow-md">
                         {hero.caption}
