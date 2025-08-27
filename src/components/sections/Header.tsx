@@ -40,7 +40,7 @@ const Header = () => {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium transition-colors text-muted-foreground hover:text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:rounded-md focus:px-2 focus:py-1"
+              className="text-sm font-medium transition-colors text-muted-foreground hover:text-foreground"
               onClick={(e) => {
                 e.preventDefault();
                 handleNavClick(link.href);
