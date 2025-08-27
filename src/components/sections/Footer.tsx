@@ -18,7 +18,7 @@ const Footer = () => {
               <Logo />
             </h3>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Discover amazing activities, events, and experiences. Join our
+              Discover amazing products, events, and experiences. Join our
               community for unforgettable adventures and lasting memories.
             </p>
             <div className="space-y-2">

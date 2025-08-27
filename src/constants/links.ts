@@ -2,7 +2,7 @@ import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
 
 export const NAV_LINKS = [
   { href: "#hero", label: "Home" },
-  { href: "#activities", label: "Activities" },
+  { href: "#products", label: "Products" },
   { href: "#events", label: "Events" },
   { href: "#blogs", label: "Blog" },
   { href: "#footer", label: "Quick Links" },
@@ -10,7 +10,7 @@ export const NAV_LINKS = [
 
 export const FOOTER_QUICK_LINKS = [
   { href: "#hero", label: "Home" },
-  { href: "#activities", label: "Activities" },
+  { href: "#products", label: "Products" },
   { href: "#events", label: "Events" },
   { href: "#blogs", label: "Blog" },
 ];

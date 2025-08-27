@@ -61,7 +61,7 @@ const Header = () => {
                 <Logo />
               </SheetTitle>
               <SheetDescription>
-                Discover amazing activities, events, and experiences. Join our
+                Discover amazing products, events, and experiences. Join our
                 community for unforgettable adventures and lasting memories.
               </SheetDescription>
             </SheetHeader>

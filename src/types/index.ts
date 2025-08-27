@@ -8,7 +8,7 @@ export type HeroData = {
   }[];
 };
 
-export type ActivitiesData = {
+export type ProductsData = {
   ProductCollection: {
     title: string;
     urlMap: string;

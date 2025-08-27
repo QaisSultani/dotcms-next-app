@@ -12,7 +12,7 @@ export const HERO_BANNER_QUERY = `
   }
 `;
 
-export const ACTIVITIES_QUERY = `
+export const PRODUCTS_QUERY = `
   query ContentAPI {
     ProductCollection(query: "+title:snow", limit: 20, offset: 0, sortBy: "score") {
       title
