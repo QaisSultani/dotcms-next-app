@@ -1,4 +1,4 @@
-const GRAPHQL_ENDPOINT = "https://demo.dotcms.com/api/v1/graphql";
+import { GRAPHQL_ENDPOINT } from "@/constants/endpoints";
 
 export async function fetchGraphQL<T>(
   query: string,
@@ -8,7 +8,9 @@ export async function fetchGraphQL<T>(
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ query, variables }),
-    cache: "no-store",
+    next: {
+      revalidate: 300,
+    },
   });
 
   if (!res.ok) throw new Error("Failed to fetch GraphQL data");
