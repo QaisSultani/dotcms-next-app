@@ -2,7 +2,7 @@
 
 import { Separator } from "@/components/ui/separator";
 import { Mail, MapPin, Phone } from "lucide-react";
-import { FOOTER_QUICK_LINKS, FOOTER_SOCIAL_LINKS } from "@/constants/links";
+import { NAV_LINKS, SOCIAL_LINKS } from "@/constants/links";
 import Logo from "@/components/shared/Logo";
 
 const Footer = () => {
@@ -32,7 +32,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Mail className="h-4 w-4" />
-                <span>hello@mysite.com</span>
+                <span>hello@venturesphere.com</span>
               </div>
             </address>
           </div>
@@ -41,7 +41,7 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="font-semibold">Quick Links</h3>
             <nav className="space-y-2">
-              {FOOTER_QUICK_LINKS.map((link) => (
+              {NAV_LINKS.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
@@ -90,7 +90,7 @@ const Footer = () => {
 
               {/* Social Links */}
               <div className="flex gap-4">
-                {FOOTER_SOCIAL_LINKS.map((social) => {
+                {SOCIAL_LINKS.map((social) => {
                   const Icon = social.icon;
                   return (
                     <a
@@ -114,7 +114,7 @@ const Footer = () => {
         {/* Copyright */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <small className="text-sm text-muted-foreground">
-            © {currentYear} MySite. All rights reserved.
+            © {currentYear} VentureSphere. All rights reserved.
           </small>
           <small className="text-sm text-muted-foreground">
             Built with Next.js and dotCMS
