@@ -26,12 +26,12 @@ const Home = () => {
     "@graph": [
       {
         "@type": "Marketing",
-        "@id": "https://dotcms-next-app.vercel.app",
+        "@id": "https://venturesphere-next-app.vercel.app",
         name: "VentureSphere",
-        url: "https://dotcms-next-app.vercel.app",
+        url: "https://venturesphere-next-app.vercel.app",
         logo: {
           "@type": "ImageObject",
-          url: "https://dotcms-next-app.vercel.app/icon.png",
+          url: "https://venturesphere-next-app.vercel.app/icon.png",
           width: 200,
           height: 60,
         },
@@ -44,7 +44,7 @@ const Home = () => {
         description:
           "Discover amazing products, events, and experiences. Join our community for unforgettable adventures and lasting memories.",
         publisher: {
-          "@id": "https://dotcms-next-app.vercel.app",
+          "@id": "https://venturesphere-next-app.vercel.app",
         },
         inLanguage: "en-US",
       },
@@ -59,7 +59,7 @@ const Home = () => {
           __html: JSON.stringify(structuredData),
         }}
       />
-      <h1 className="sr-only">Real-World NextJS App with dotCMS - Home</h1>
+      <h1 className="sr-only">VentureSphere | Real-World NextJS App with dotCMS - Home</h1>
       <HeroBanner />
       <Products />
       <Events />

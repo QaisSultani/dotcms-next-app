@@ -29,12 +29,13 @@ export const metadata: Metadata = {
     "events",
     "blog",
     "headless CMS",
+    "Venture Sphere",
   ],
   authors: [{ name: "VentureSphere Team" }],
   creator: "VentureSphere",
   publisher: "VentureSphere",
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || "https://dotcms-next-app.vercel.app/"
+    process.env.NEXT_PUBLIC_SITE_URL || "https://venturesphere-next-app.vercel.app/"
   ),
   openGraph: {
     type: "website",

@@ -2,7 +2,7 @@
 
 A modern marketing landing page built with Next.js 15 and React 19, fetching dynamic content from dotCMS via GraphQL. This project demonstrates enterprise-level architecture, performance optimization, and modern web development best practices.
 
-🌐 **Live Demo**: [https://dotcms-next-app.vercel.app](https://dotcms-next-app.vercel.app)  
+🌐 **Live Demo**: [https://venturesphere-next-app.vercel.app](https://venturesphere-next-app.vercel.app)  
 📁 **Repository**: [https://github.com/QaisSultani/dotcms-next-app](https://github.com/QaisSultani/dotcms-next-app)
 
 ## 🚀 Quick Start
