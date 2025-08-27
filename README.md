@@ -1,4 +1,4 @@
-# Real-World React System Design with dotCMS
+# VentureSphere | Real-World NextJS App with dotCMS
 
 A modern marketing landing page built with Next.js 15 and React 19, fetching dynamic content from dotCMS via GraphQL. This project demonstrates enterprise-level architecture, performance optimization, and modern web development best practices.
 
@@ -97,44 +97,64 @@ Open [http://localhost:3000](http://localhost:3000) to view the application.
 
 1. **Internationalization (i18n)**: Multi-language support for global reach using Next.js internationalization features
 
-2. **Enhanced Branding**: Custom logo design, favicon implementation, and branded Open Graph images for improved social media sharing
+2. **Content Search & Filtering**: Search functionality across products, events, and blogs with advanced filtering options for better content discovery
+
+3. **User Authentication & Personalization**: User accounts system with personalized content recommendations and bookmarking features
 
 ## 📁 Project Structure
 
 ```
+├── public/                         # Static assets
+│   ├── apple-icon.png              # Apple touch icon
+│   ├── favicon.ico                 # Browser favicon
+│   ├── icon.png                    # App icon
+│   ├── og-image.png                # Open Graph image
+│   ├── robots.txt                  # Search engine directives
+│   └── sitemap.xml                 # Site structure for SEO
 ├── src/
-│   ├── app/                         # Next.js App Router
-│   │   ├── globals.css              # Global styles
-│   │   ├── layout.tsx               # Root layout with SEO
-│   │   └── page.tsx                 # Home page with dynamic imports
+│   ├── app/                        # Next.js App Router
+│   │   ├── globals.css             # Global styles and Tailwind imports
+│   │   ├── layout.tsx              # Root layout with SEO metadata
+│   │   └── page.tsx                # Home page with dynamic imports
 │   ├── components/
-│   │   ├── sections/                # Main page sections
-│   │   │   ├── Header.tsx           # Navigation header
-│   │   │   ├── HeroBanner.tsx       # Dynamic hero carousel
-│   │   │   ├── Products.tsx         # Product grid
-│   │   │   ├── Events.tsx           # Events showcase
-│   │   │   ├── Blogs.tsx            # Blog feed
-│   │   │   └── Footer.tsx           # Footer with newsletter
-│   │   ├── shared/                  # Reusable components
-│   │   │   ├── Logo.tsx             # Brand logo component
-│   │   │   └── *Skeleton.tsx        # Loading states
-│   │   └── ui/                      # Base UI components
-│   │       └── *.tsx                # Reusable UI primitives
+│   │   ├── sections/               # Main page sections
+│   │   │   ├── Blogs.tsx           # Blog feed with read-more links
+│   │   │   ├── Events.tsx          # Events showcase grid
+│   │   │   ├── Footer.tsx          # Footer with newsletter signup
+│   │   │   ├── Header.tsx          # Navigation header with mobile menu
+│   │   │   ├── HeroBanner.tsx      # Dynamic hero carousel
+│   │   │   └── Products.tsx        # Product grid with pricing
+│   │   ├── shared/                 # Reusable components
+│   │   │   ├── BlogsSkeleton.tsx   # Blog loading skeleton
+│   │   │   ├── EventsSkeleton.tsx  # Events loading skeleton
+│   │   │   ├── FooterSkeleton.tsx  # Footer loading skeleton
+│   │   │   └── Logo.tsx            # Brand logo component
+│   │   └── ui/                     # Base UI components (Shadcn/ui components)
+│   │       ├── badge.tsx           # Badge component for categories
+│   │       ├── button.tsx          # Button variants
+│   │       ├── card.tsx            # Card layout component
+│   │       ├── carousel.tsx        # Carousel with navigation
+│   │       ├── separator.tsx       # Visual separator
+│   │       ├── sheet.tsx           # Slide-out panel (mobile menu)
+│   │       └── skeleton.tsx        # Loading skeleton utility
 │   ├── constants/
-│   │   ├── endpoints.ts             # API endpoints
-│   │   ├── queries.ts               # GraphQL queries
-│   │   └── links.ts                 # Navigation links
+│   │   ├── endpoints.ts            # dotCMS API endpoints
+│   │   ├── links.ts                # Navigation and social links
+│   │   └── queries.ts              # GraphQL queries for content
 │   ├── lib/
-│   │   ├── fetchGraphql.ts          # GraphQL client
-│   │   ├── utils.ts                 # Utility functions
-│   │   └── withLogger.ts            # Logging wrapper
+│   │   ├── fetchGraphql.ts         # GraphQL client with ISR caching
+│   │   ├── utils.ts                # Utility functions and URL helpers
+│   │   └── withLogger.ts           # API logging wrapper
 │   └── types/
-│       └── index.ts                 # TypeScript definitions
-├── public/                          # Static assets
-├── package.json                     # Dependencies & scripts
-├── next.config.ts                   # Next.js configuration
-├── tailwind.config.ts               # Tailwind CSS configuration
-└── tsconfig.json                    # TypeScript configuration
+│       └── index.ts                # TypeScript type definitions
+├── components.json                 # Shadcn/ui configuration
+├── eslint.config.mjs               # ESLint configuration
+├── next.config.ts                  # Next.js configuration with image optimization
+├── next-env.d.ts                   # Next.js TypeScript declarations
+├── package.json                    # Dependencies and scripts
+├── pnpm-lock.yaml                  # pnpm lock file
+├── postcss.config.mjs              # PostCSS configuration for Tailwind
+└── tsconfig.json                   # TypeScript compiler configuration
 ```
 
 ## 🛠️ Development Setup
