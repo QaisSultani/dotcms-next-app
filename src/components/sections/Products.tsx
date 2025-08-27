@@ -87,5 +87,4 @@ const Products = async () => {
     </section>
   );
 };
-
 export default Products;

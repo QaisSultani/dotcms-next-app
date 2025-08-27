@@ -1,5 +1,3 @@
-"use client";
-
 import { fetchGraphQL } from "@/lib/fetchGraphql";
 import { withLogger } from "@/lib/withLogger";
 import { EVENTS_QUERY } from "@/constants/queries";
@@ -7,37 +5,12 @@ import { generateUrl } from "@/lib/utils";
 import { EventsData } from "@/types";
 import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { useEffect, useState } from "react";
-import EventsSkeleton from "@/components/shared/EventsSkeleton";
 
-const Events = () => {
-  const [events, setEvents] = useState<
-    EventsData["calendarEventCollection"] | null
-  >(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchEvents = async () => {
-      const data = await withLogger("fetchHeroBanner", () =>
-        fetchGraphQL<EventsData>(EVENTS_QUERY)
-      );
-      const events_list = data?.calendarEventCollection;
-
-      if (!events_list || events_list.length === 0) {
-        setEvents([]);
-        setLoading(false);
-        return;
-      }
-      setEvents(events_list);
-      setLoading(false);
-    };
-
-    fetchEvents();
-  }, []);
-
-  if (loading) {
-    return <EventsSkeleton />;
-  }
+const Events = async () => {
+  const data = await withLogger("fetchEvents", () =>
+    fetchGraphQL<EventsData>(EVENTS_QUERY)
+  );
+  const events = data?.calendarEventCollection;
 
   if (!events || events.length === 0) {
     return null;

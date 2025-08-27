@@ -73,5 +73,4 @@ const HeroBanner = async () => {
     </section>
   );
 };
-
 export default HeroBanner;

@@ -1,5 +1,3 @@
-"use client";
-
 import { fetchGraphQL } from "@/lib/fetchGraphql";
 import { withLogger } from "@/lib/withLogger";
 import { BLOGS_QUERY } from "@/constants/queries";
@@ -9,37 +7,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
-import BlogsSkeleton from "@/components/shared/BlogsSkeleton";
 
-const Blogs = () => {
-  const [blogs, setBlogs] = useState<BlogsData["BlogCollection"] | null>(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchBlogs = async () => {
-      const data = await withLogger("fetchHeroBanner", () =>
-        fetchGraphQL<BlogsData>(BLOGS_QUERY)
-      );
-      const blogs_list = data?.BlogCollection;
-
-      if (!blogs_list || blogs_list.length === 0) {
-        setBlogs([]);
-        setLoading(false);
-        return;
-      }
-      setBlogs(blogs_list);
-      setLoading(false);
-    };
-
-    fetchBlogs();
-  }, []);
-
-  if (loading) {
-    return <BlogsSkeleton />;
-  }
-
+const Blogs = async () => {
+  const data = await withLogger("fetchBlogs", () =>
+    fetchGraphQL<BlogsData>(BLOGS_QUERY)
+  );
+  const blogs = data?.BlogCollection;
   if (!blogs || blogs.length === 0) {
     return null;
   }

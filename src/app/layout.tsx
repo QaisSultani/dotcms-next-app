@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import "@/app/globals.css";
+import Header from "@/components/sections/Header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,8 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Rea-World NextJS App with dotCMS",
-  description: "Real-World React/Next System Design with dotCMS",
+  title: "Real-World NextJS App with dotCMS",
+  description:
+    "Discover amazing products, events, and experiences. Join our community for unforgettable adventures and lasting memories.",
 };
 
 export default function RootLayout({
@@ -29,10 +29,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="flex flex-col min-h-screen w-full">
+        <div className="min-h-screen w-full">
           <Header />
-          <main className="flex-grow">{children}</main>
-          <Footer />
+          {children}
         </div>
       </body>
     </html>
