@@ -37,13 +37,13 @@ const Events = async () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {events.map((event, index) => (
-            <article key={`${event.title}-${index}`}>
+            <article key={`${event.description.slice(0,20)}-${index}`}>
               <Card className="overflow-hidden hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 pt-0">
                 <figure className="aspect-square relative overflow-hidden">
                   {event?.image?.fileAsset?.versionPath ? (
                     <Image
-                      src={generateUrl(event.image.fileAsset.versionPath)}
-                      alt={`Event image for ${event.title}`}
+                      src={generateUrl(event?.image?.fileAsset?.versionPath)}
+                      alt={`Event image for ${event?.title ? event?.title : "featured event"}`}
                       fill
                       className="object-cover"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -55,16 +55,18 @@ const Events = async () => {
                   )}
                 </figure>
 
-                <CardHeader>
-                  <CardTitle>
-                    <h3>{event.title}</h3>
-                  </CardTitle>
-                </CardHeader>
+                {event?.title && (
+                  <CardHeader>
+                    <CardTitle>
+                      <h3>{event?.title}</h3>
+                    </CardTitle>
+                  </CardHeader>
+                )}
 
                 <CardContent>
                   <div
                     className="text-muted-foreground line-clamp-5 text-sm"
-                    dangerouslySetInnerHTML={{ __html: event.description }}
+                    dangerouslySetInnerHTML={{ __html: event?.description }}
                   />
                 </CardContent>
               </Card>

@@ -39,13 +39,13 @@ const Blogs = async () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {blogs.map((blog) => (
-            <article key={blog.urlMap} className="group">
+            <article key={blog?.urlMap} className="group">
               <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 pt-0 h-full">
                 <figure className="aspect-video relative overflow-hidden">
                   {blog?.image?.fileAsset?.versionPath ? (
                     <Image
-                      src={generateUrl(blog.image.fileAsset.versionPath)}
-                      alt={`Featured image for blog post: ${blog.title}`}
+                      src={generateUrl(blog?.image?.fileAsset?.versionPath)}
+                      alt={`Featured image for blog post: ${blog?.title}`}
                       fill
                       className="object-cover transition-transform duration-300 group-hover:scale-105"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -57,18 +57,22 @@ const Blogs = async () => {
                   )}
                 </figure>
 
-                <CardHeader>
-                  <CardTitle className="group-hover:text-primary transition-colors">
-                    <h3>{blog.title}</h3>
-                  </CardTitle>
-                </CardHeader>
+                {blog?.title && (
+                  <CardHeader>
+                    <CardTitle className="group-hover:text-primary transition-colors">
+                      <h3>{blog.title}</h3>
+                    </CardTitle>
+                  </CardHeader>
+                )}
 
                 <CardContent className="flex flex-col justify-around flex-grow">
-                  <p className="text-muted-foreground line-clamp-2 mb-4 text-sm">
-                    {blog.teaser}...
-                  </p>
+                  {blog?.teaser && (
+                    <p className="text-muted-foreground line-clamp-2 mb-4 text-sm">
+                      {blog.teaser}...
+                    </p>
+                  )}
 
-                  <Link href={generateUrl(blog.urlMap)}>
+                  <Link href={generateUrl(blog?.urlMap)}>
                     <Button variant="outline" size="sm" className="group/btn">
                       Read More
                       <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />

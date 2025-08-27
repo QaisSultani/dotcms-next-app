@@ -39,15 +39,15 @@ const Products = async () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
           {products.map((product) => (
-            <article key={product.urlMap} className="group">
-              <Link href={generateUrl(product.urlMap)} className="block h-full">
+            <article key={product?.urlMap} className="group">
+              <Link href={generateUrl(product?.urlMap)} className="block h-full">
                 <Card className="h-full flex flex-col overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
                   <figure className="aspect-video relative overflow-hidden flex-grow">
                     {product?.image?.versionPath ? (
                       <Image
-                        src={generateUrl(product.image.versionPath)}
-                        alt={`${product.title} - Product image showing ${
-                          product.category?.[0]?.name || "featured item"
+                        src={generateUrl(product?.image?.versionPath)}
+                        alt={`${product?.title ? product?.title : "Featured"} - Product image showing ${
+                          product?.category?.[0]?.name || "featured item"
                         }`}
                         fill
                         className="object-contain transition-transform duration-300 group-hover:scale-105"
@@ -61,25 +61,27 @@ const Products = async () => {
                   </figure>
 
                   <CardContent className="p-6">
-                    <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
-                      {product.title}
-                    </h3>
+                    {product?.title && (
+                      <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
+                        {product?.title}
+                      </h3>
+                    )}
 
-                    {product.category && product.category.length > 0 && (
+                    {product?.category && product?.category?.length > 0 && (
                       <div className="flex flex-wrap gap-2 mb-4">
                         {product.category.map((cat) => (
                           <Badge
-                            key={cat.inode}
+                            key={cat?.inode}
                             variant="secondary"
                             className="text-xs"
                           >
-                            {cat.name}
+                            {cat?.name}
                           </Badge>
                         ))}
                       </div>
                     )}
 
-                    {product.retailPrice && (
+                    {product?.retailPrice && (
                       <div className="text-2xl font-bold text-primary">
                         ${product.retailPrice}
                       </div>
