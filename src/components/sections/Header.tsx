@@ -64,7 +64,7 @@ const Header = () => {
                 community for unforgettable adventures and lasting memories.
               </SheetDescription>
             </SheetHeader>
-            <div className="flex flex-col space-y-2">
+            <nav className="flex flex-col space-y-2">
               {NAV_LINKS.map((link) => (
                 <a
                   key={link.href}
@@ -78,12 +78,11 @@ const Header = () => {
                   {link.label}
                 </a>
               ))}
-            </div>
+            </nav>
           </SheetContent>
         </Sheet>
       </div>
     </header>
   );
 };
-
 export default Header;

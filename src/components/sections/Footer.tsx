@@ -21,7 +21,7 @@ const Footer = () => {
               Discover amazing products, events, and experiences. Join our
               community for unforgettable adventures and lasting memories.
             </p>
-            <div className="space-y-2">
+            <address className="space-y-2">
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <MapPin className="h-4 w-4" />
                 <span>123 Adventure Street, Explorer City</span>
@@ -34,7 +34,7 @@ const Footer = () => {
                 <Mail className="h-4 w-4" />
                 <span>hello@mysite.com</span>
               </div>
-            </div>
+            </address>
           </div>
 
           {/* Quick Links */}
@@ -66,16 +66,26 @@ const Footer = () => {
               <p className="text-sm text-muted-foreground">
                 Subscribe to our newsletter for the latest updates and offers.
               </p>
-              <div className="flex gap-2 flex-col">
+              <form
+                className="flex gap-2 flex-col"
+                onSubmit={(e) => e.preventDefault()}
+              >
+                <label htmlFor="newsletter-email" className="sr-only">
+                  Email address for newsletter subscription
+                </label>
                 <input
+                  id="newsletter-email"
                   type="email"
                   placeholder="Enter your email"
                   className="flex-1 px-3 py-2 text-sm border border-input rounded-md bg-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent"
                 />
-                <button className="px-4 py-2 text-sm font-medium text-primary-foreground bg-primary rounded-md hover:bg-primary/90 transition-colors">
+                <button
+                  type="submit"
+                  className="px-4 py-2 text-sm font-medium text-primary-foreground bg-primary rounded-md hover:bg-primary/90 transition-colors"
+                >
                   Subscribe
                 </button>
-              </div>
+              </form>
 
               {/* Social Links */}
               <div className="flex gap-4">
@@ -102,12 +112,12 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-muted-foreground">
+          <small className="text-sm text-muted-foreground">
             © {currentYear} MySite. All rights reserved.
-          </p>
-          <p className="text-sm text-muted-foreground">
+          </small>
+          <small className="text-sm text-muted-foreground">
             Built with Next.js and dotCMS
-          </p>
+          </small>
         </div>
       </div>
     </footer>

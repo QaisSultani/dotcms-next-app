@@ -31,7 +31,7 @@ const HeroBanner = async () => {
         <CarouselContent>
           {hero_banners.map((hero, index) => (
             <CarouselItem key={`${hero.title}-${index}`}>
-              <div className="relative h-[60vh] md:h-[70vh] lg:h-[80vh] w-full overflow-hidden">
+              <figure className="relative h-[60vh] md:h-[70vh] lg:h-[80vh] w-full overflow-hidden">
                 {hero?.image?.fileAsset?.versionPath && (
                   <Image
                     src={generateUrl(hero.image.fileAsset.versionPath)}
@@ -47,7 +47,7 @@ const HeroBanner = async () => {
                 <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/30 to-black/60" />
 
                 {/* Content */}
-                <div className="absolute inset-0 flex items-center justify-center">
+                <figcaption className="absolute inset-0 flex items-center justify-center">
                   <div className="container px-4 text-center text-white">
                     <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 drop-shadow-lg">
                       {hero.title}
@@ -58,8 +58,8 @@ const HeroBanner = async () => {
                       </p>
                     )}
                   </div>
-                </div>
-              </div>
+                </figcaption>
+              </figure>
             </CarouselItem>
           ))}
         </CarouselContent>

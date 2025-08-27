@@ -30,37 +30,36 @@ const Events = async () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {events.map((event, index) => (
-            <Card
-              key={`${event.title}-${index}`}
-              className="overflow-hidden hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 pt-0"
-            >
-              <div className="aspect-square relative overflow-hidden">
-                {event?.image?.fileAsset?.versionPath ? (
-                  <Image
-                    src={generateUrl(event.image.fileAsset.versionPath)}
-                    alt={event.title}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            <article key={`${event.title}-${index}`}>
+              <Card className="overflow-hidden hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 pt-0">
+                <figure className="aspect-square relative overflow-hidden">
+                  {event?.image?.fileAsset?.versionPath ? (
+                    <Image
+                      src={generateUrl(event.image.fileAsset.versionPath)}
+                      alt={event.title}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-muted flex items-center justify-center">
+                      <span className="text-muted-foreground">No Image</span>
+                    </div>
+                  )}
+                </figure>
+
+                <CardHeader>
+                  <CardTitle>{event.title}</CardTitle>
+                </CardHeader>
+
+                <CardContent>
+                  <div
+                    className="text-muted-foreground line-clamp-5 text-sm"
+                    dangerouslySetInnerHTML={{ __html: event.description }}
                   />
-                ) : (
-                  <div className="w-full h-full bg-muted flex items-center justify-center">
-                    <span className="text-muted-foreground">No Image</span>
-                  </div>
-                )}
-              </div>
-
-              <CardHeader>
-                <CardTitle>{event.title}</CardTitle>
-              </CardHeader>
-
-              <CardContent>
-                <div
-                  className="text-muted-foreground line-clamp-5 text-sm"
-                  dangerouslySetInnerHTML={{ __html: event.description }}
-                />
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+            </article>
           ))}
         </div>
       </div>

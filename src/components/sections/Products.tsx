@@ -32,55 +32,56 @@ const Products = async () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
           {products.map((product) => (
-            <Link
-              href={generateUrl(product.urlMap)}
-              key={product.urlMap}
-              className="group"
-            >
-              <Card className="h-full flex flex-col overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-                <div className="aspect-video relative overflow-hidden flex-grow">
-                  {product?.image?.versionPath ? (
-                    <Image
-                      src={generateUrl(product.image.versionPath)}
-                      alt={product.title}
-                      fill
-                      className="object-contain transition-transform duration-300 group-hover:scale-105"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    />
-                  ) : (
-                    <div className="w-full h-full bg-muted flex items-center justify-center">
-                      <span className="text-muted-foreground">No Image</span>
-                    </div>
-                  )}
-                </div>
+            <article key={product.urlMap} className="group">
+              <Link
+                href={generateUrl(product.urlMap)}
+                className="block h-full"
+              >
+                <Card className="h-full flex flex-col overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                  <figure className="aspect-video relative overflow-hidden flex-grow">
+                    {product?.image?.versionPath ? (
+                      <Image
+                        src={generateUrl(product.image.versionPath)}
+                        alt={product.title}
+                        fill
+                        className="object-contain transition-transform duration-300 group-hover:scale-105"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-muted flex items-center justify-center">
+                        <span className="text-muted-foreground">No Image</span>
+                      </div>
+                    )}
+                  </figure>
 
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
-                    {product.title}
-                  </h3>
+                  <CardContent className="p-6">
+                    <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
+                      {product.title}
+                    </h3>
 
-                  {product.category && product.category.length > 0 && (
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {product.category.map((cat) => (
-                        <Badge
-                          key={cat.inode}
-                          variant="secondary"
-                          className="text-xs"
-                        >
-                          {cat.name}
-                        </Badge>
-                      ))}
-                    </div>
-                  )}
+                    {product.category && product.category.length > 0 && (
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {product.category.map((cat) => (
+                          <Badge
+                            key={cat.inode}
+                            variant="secondary"
+                            className="text-xs"
+                          >
+                            {cat.name}
+                          </Badge>
+                        ))}
+                      </div>
+                    )}
 
-                  {product.retailPrice && (
-                    <div className="text-2xl font-bold text-primary">
-                      ${product.retailPrice}
-                    </div>
-                  )}
-                </CardContent>
-              </Card>
-            </Link>
+                    {product.retailPrice && (
+                      <div className="text-2xl font-bold text-primary">
+                        ${product.retailPrice}
+                      </div>
+                    )}
+                  </CardContent>
+                </Card>
+              </Link>
+            </article>
           ))}
         </div>
       </div>
