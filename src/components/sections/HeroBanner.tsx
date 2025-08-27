@@ -23,7 +23,7 @@ const HeroBanner = async () => {
   }
 
   return (
-    <section id="hero" className="w-full">
+    <section id="hero" className="w-full" aria-label="Hero section slideshow">
       <Carousel
         className="w-full max-w-none"
         opts={{ loop: true, align: "start" }}
@@ -35,7 +35,9 @@ const HeroBanner = async () => {
                 {hero?.image?.fileAsset?.versionPath && (
                   <Image
                     src={generateUrl(hero.image.fileAsset.versionPath)}
-                    alt={hero.title}
+                    alt={`Hero section image: ${hero.title}${
+                      hero.caption ? ` - ${hero.caption}` : ""
+                    }`}
                     fill
                     className="object-cover"
                     priority={index === 0}
@@ -65,8 +67,14 @@ const HeroBanner = async () => {
         </CarouselContent>
         {hero_banners.length > 1 && (
           <>
-            <CarouselPrevious className="left-4 backdrop-brightness-50 supports-[backdrop-filter]:bg-background/50 hover:bg-white/90 text-black border-white/20" />
-            <CarouselNext className="right-4 backdrop-brightness-50 supports-[backdrop-filter]:bg-background/50 hover:bg-white/90 text-black border-white/20" />
+            <CarouselPrevious
+              className="left-4 backdrop-brightness-50 supports-[backdrop-filter]:bg-background/50 hover:bg-white/90 text-black border-white/20"
+              aria-label={`Previous slide (${hero_banners.length} slides total)`}
+            />
+            <CarouselNext
+              className="right-4 backdrop-brightness-50 supports-[backdrop-filter]:bg-background/50 hover:bg-white/90 text-black border-white/20"
+              aria-label={`Next slide (${hero_banners.length} slides total)`}
+            />
           </>
         )}
       </Carousel>

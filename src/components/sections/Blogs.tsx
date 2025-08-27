@@ -19,10 +19,17 @@ const Blogs = async () => {
   }
 
   return (
-    <section id="blogs" className="py-16 bg-muted/30 flex justify-center">
+    <section
+      id="blogs"
+      className="py-16 bg-muted/30 flex justify-center"
+      aria-labelledby="blogs-heading"
+    >
       <div className="container px-4 py-10">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2
+            id="blogs-heading"
+            className="text-3xl md:text-4xl font-bold mb-4"
+          >
             Latest Blog Posts
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -38,7 +45,7 @@ const Blogs = async () => {
                   {blog?.image?.fileAsset?.versionPath ? (
                     <Image
                       src={generateUrl(blog.image.fileAsset.versionPath)}
-                      alt={blog.title}
+                      alt={`Featured image for blog post: ${blog.title}`}
                       fill
                       className="object-cover transition-transform duration-300 group-hover:scale-105"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -52,7 +59,7 @@ const Blogs = async () => {
 
                 <CardHeader>
                   <CardTitle className="group-hover:text-primary transition-colors">
-                    {blog.title}
+                    <h3>{blog.title}</h3>
                   </CardTitle>
                 </CardHeader>
 

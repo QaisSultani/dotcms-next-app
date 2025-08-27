@@ -7,6 +7,7 @@ const Logo = ({ onClick }: { onClick?: (href: string) => void }) => {
         e.preventDefault();
         if (onClick) onClick("#hero");
       }}
+      aria-label="MySite - Go to homepage"
     >
       MySite
     </a>

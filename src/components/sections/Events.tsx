@@ -17,10 +17,17 @@ const Events = async () => {
   }
 
   return (
-    <section id="events" className="py-16 flex justify-center">
+    <section
+      id="events"
+      className="py-16 flex justify-center"
+      aria-labelledby="events-heading"
+    >
       <div className="container px-4 py-10">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2
+            id="events-heading"
+            className="text-3xl md:text-4xl font-bold mb-4"
+          >
             Upcoming Events
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -36,7 +43,7 @@ const Events = async () => {
                   {event?.image?.fileAsset?.versionPath ? (
                     <Image
                       src={generateUrl(event.image.fileAsset.versionPath)}
-                      alt={event.title}
+                      alt={`Event image for ${event.title}`}
                       fill
                       className="object-cover"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -49,7 +56,9 @@ const Events = async () => {
                 </figure>
 
                 <CardHeader>
-                  <CardTitle>{event.title}</CardTitle>
+                  <CardTitle>
+                    <h3>{event.title}</h3>
+                  </CardTitle>
                 </CardHeader>
 
                 <CardContent>

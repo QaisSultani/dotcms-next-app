@@ -31,12 +31,16 @@ const Header = () => {
         <Logo onClick={handleNavClick} />
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-8">
+        <nav
+          className="hidden md:flex items-center space-x-8"
+          role="navigation"
+          aria-label="Main navigation"
+        >
           {NAV_LINKS.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium transition-colors text-muted-foreground hover:text-foreground"
+              className="text-sm font-medium transition-colors text-muted-foreground hover:text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:rounded-md focus:px-2 focus:py-1"
               onClick={(e) => {
                 e.preventDefault();
                 handleNavClick(link.href);
@@ -50,11 +54,20 @@ const Header = () => {
         {/* Mobile Navigation */}
         <Sheet open={open} onOpenChange={setOpen}>
           <SheetTrigger asChild>
-            <button className="md:hidden p-2 hover:bg-accent rounded-md">
+            <button
+              className="md:hidden p-2 hover:bg-accent rounded-md"
+              aria-label="Open navigation menu"
+              aria-expanded={open}
+              aria-controls="mobile-navigation"
+            >
               <Menu className="h-6 w-6" />
             </button>
           </SheetTrigger>
-          <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+          <SheetContent
+            side="right"
+            className="w-[300px] sm:w-[400px]"
+            id="mobile-navigation"
+          >
             <SheetHeader>
               <SheetTitle className="text-left">
                 <Logo />
@@ -64,7 +77,11 @@ const Header = () => {
                 community for unforgettable adventures and lasting memories.
               </SheetDescription>
             </SheetHeader>
-            <nav className="flex flex-col space-y-2">
+            <nav
+              className="flex flex-col space-y-2"
+              role="navigation"
+              aria-label="Mobile navigation"
+            >
               {NAV_LINKS.map((link) => (
                 <a
                   key={link.href}

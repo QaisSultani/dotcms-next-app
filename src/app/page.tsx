@@ -22,13 +22,13 @@ const Footer = dynamic(() => import("@/components/sections/Footer"), {
 
 const Home = () => {
   return (
-    <main>
+    <>
       <HeroBanner />
       <Products />
       <Events />
       <Blogs />
       <Footer />
-    </main>
+    </>
   );
 };
 
