@@ -11,8 +11,7 @@ import {
   SheetDescription,
 } from "@/components/ui/sheet";
 import { NAV_LINKS } from "@/constants/links";
-import Logo from "../shared/Logo";
-import { Button } from "../ui/button";
+import Logo from "@/components/shared/Logo";
 
 const Header = () => {
   const [open, setOpen] = useState(false);

@@ -3,7 +3,7 @@
 import { Separator } from "@/components/ui/separator";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { FOOTER_QUICK_LINKS, FOOTER_SOCIAL_LINKS } from "@/constants/links";
-import Logo from "../shared/Logo";
+import Logo from "@/components/shared/Logo";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
