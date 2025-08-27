@@ -8,7 +8,9 @@ export async function fetchGraphQL<T>(
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ query, variables }),
-    cache: "no-store",
+    next: {
+      revalidate: 300,
+    },
   });
 
   if (!res.ok) throw new Error("Failed to fetch GraphQL data");
