@@ -1,6 +1,6 @@
 export const HERO_BANNER_QUERY = `
   query ContentAPI {
-    BannerCollection(query: "", limit: 5, offset: 0, sortBy: "score") {
+    BannerCollection(query: "", limit: 20, offset: 0, sortBy: "score") {
       title
       caption
       image {
@@ -14,7 +14,7 @@ export const HERO_BANNER_QUERY = `
 
 export const PRODUCTS_QUERY = `
   query ContentAPI {
-    ProductCollection(query: "+title:snow", limit: 20, offset: 0, sortBy: "score") {
+    ProductCollection(query: "", limit: 20, offset: 0, sortBy: "score") {
       title
       urlMap
       category {
@@ -45,7 +45,7 @@ export const EVENTS_QUERY = `
 
 export const BLOGS_QUERY = `
   query ContentAPI {
-    BlogCollection(query: "+tags:(snowboarding OR surfing)", limit: 20, offset: 0, sortBy: "score") {
+    BlogCollection(query: "", limit: 20, offset: 0, sortBy: "score") {
       title
       urlMap
       teaser

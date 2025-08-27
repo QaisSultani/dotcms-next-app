@@ -40,7 +40,7 @@ const Home = () => {
         "@type": "WebSite",
         "@id": "/#website",
         url: "/",
-        name: "Real-World NextJS App with dotCMS",
+        name: "VentureSphere | Real-World NextJS App with dotCMS",
         description:
           "Discover amazing products, events, and experiences. Join our community for unforgettable adventures and lasting memories.",
         publisher: {

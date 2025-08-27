@@ -9,7 +9,7 @@ const Logo = ({ onClick }: { onClick?: (href: string) => void }) => {
       }}
       aria-label="MySite - Go to homepage"
     >
-      MySite
+      VentureSphere
     </a>
   );
 };

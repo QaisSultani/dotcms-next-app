@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Real-World NextJS App with dotCMS",
+  title: "VentureSphere | Real-World NextJS App with dotCMS",
   description:
     "Discover amazing products, events, and experiences. Join our community for unforgettable adventures and lasting memories.",
   keywords: [
@@ -30,13 +30,13 @@ export const metadata: Metadata = {
   creator: "dotCMS",
   publisher: "dotCMS",
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || "https://localhost:3000"
+    process.env.NEXT_PUBLIC_SITE_URL || "https://dotcms-next-app.vercel.app/"
   ),
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "/",
-    title: "Real-World NextJS App with dotCMS",
+    title: "VentureSphere | Real-World NextJS App with dotCMS",
     description:
       "Discover amazing products, events, and experiences. Join our community for unforgettable adventures and lasting memories.",
     siteName: "dotCMS Next.js Demo",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Real-World NextJS App with dotCMS",
+    title: "VentureSphere | Real-World NextJS App with dotCMS",
     description:
       "Discover amazing products, events, and experiences. Join our community for unforgettable adventures and lasting memories.",
     images: ["/og-image.jpg"],
