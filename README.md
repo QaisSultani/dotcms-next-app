@@ -5,6 +5,19 @@ A modern marketing landing page built with Next.js 15 and React 19, fetching dyn
 🌐 **Live Demo**: [https://venturesphere-next-app.vercel.app](https://venturesphere-next-app.vercel.app)  
 📁 **Repository**: [https://github.com/QaisSultani/dotcms-next-app](https://github.com/QaisSultani/dotcms-next-app)
 
+## ⚡ Performance Metrics
+
+Lighthouse audit results demonstrating enterprise-grade performance optimization:
+
+| Metric | Score | Impact |
+|--------|--------|---------|
+| **Performance** | 💯 **100** | Blazing-fast loading with optimized ISR caching and code splitting |
+| **Accessibility** | 🎯 **96** | WCAG compliant with semantic HTML and ARIA implementation |
+| **Best Practices** | ✅ **96** | Modern web standards with security and performance optimizations |
+| **SEO** | 🔍 **92** | Search engine optimized with structured data and meta tags |
+
+*Scores achieved through Next.js 15 optimizations, dynamic imports, image optimization, and strategic ISR caching.*
+
 ## 🚀 Quick Start
 
 ### Prerequisites
@@ -100,6 +113,8 @@ Open [http://localhost:3000](http://localhost:3000) to view the application.
 2. **Content Search & Filtering**: Search functionality across products, events, and blogs with advanced filtering options for better content discovery
 
 3. **User Authentication & Personalization**: User accounts system with personalized content recommendations and bookmarking features
+
+4. **Comprehensive Testing Suite**: Unit, integration, and end-to-end testing with Jest and Cypress for robust code quality assurance
 
 ## 📁 Project Structure
 
